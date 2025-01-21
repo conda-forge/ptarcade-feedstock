@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ptarcade-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ptarcade-{{ version }}.tar.gz
   sha256: ab4f550bcb803899c230211a029dfbeda81d7604465d4d115dc1ed3ac6c47565
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9,<3.11
+    - python {{ python_min }}
     - poetry-core
     - pip
   run:
-    - python >=3.9,<3.11
+    - python >={{ python_min }},<3.11
     - ptmcmcsampler >=2.1.1,<3.0.0
     - mpi4py >=3.1.4,<4.0.0
     - h5py >=3.8.0,<4.0.0
@@ -39,6 +39,8 @@ requirements:
     - rich >=13.4.2,<14.0.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - ptarcade
 
