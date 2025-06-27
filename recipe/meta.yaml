@@ -1,5 +1,5 @@
 {% set name = "ptarcade" %}
-{% set version = "1.1.2" %}
+{% set version = "1.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ptarcade-{{ version }}.tar.gz
-  sha256: ab4f550bcb803899c230211a029dfbeda81d7604465d4d115dc1ed3ac6c47565
+  sha256: 52c039c173e5f1b3bcfb42908e6b73a43b91aa007bf4b383802e0b27207fe40e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
