@@ -43,6 +43,8 @@ test:
     - python {{ python_min }}
   imports:
     - ptarcade
+  commands:
+    - pip check
 
 about:
   home: https://andrea-mitridate.github.io/PTArcade/
