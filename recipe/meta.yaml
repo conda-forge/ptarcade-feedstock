@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: uv build --wheel && {{ PYTHON }} -m pip install dist/ptarcade-{{ version }}-py3-none-any.whl -vv --no-deps
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -41,7 +41,7 @@ requirements:
     - rich >=13.4.2,<15.0.0
     - ceffyl >=1.41.1,<1.50
     - setuptools >=80.0.0
-    - astropy >=5.3.4
+    - astropy-base >=5.3.4
 
 test:
   requires:
