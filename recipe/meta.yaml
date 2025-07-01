@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  script: uv build --wheel && {{ PYTHON }} -m pip install dist/ptarcade-{{ version }}-py3-none-any.whl -vv
+  script: uv build --wheel && {{ PYTHON }} -m pip install dist/ptarcade-{{ version }}-py3-none-any.whl -vv --no-deps
   number: 0
 
 requirements:
