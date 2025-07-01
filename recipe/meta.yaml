@@ -11,10 +11,14 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: uv build --wheel && {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
+  build:
+    - python {{ python_min }}
+    - uv
+    - pip
   host:
     - python {{ python_min }}
     - uv
